@@ -13,6 +13,7 @@ class Multimodal(nn.Module):
         act = nn.ReLU()
         text_len = text_len
         self.rnn_text = RNN(input_size=768, hidden_size=64, num_layers=2, drop=0.2)
+
         self.att_text = ATT(128, text_len)
 
         self.lin_clip_clip = nn.Sequential(nn.Dropout(p), nn.Linear(256, dim), act)
@@ -84,6 +85,8 @@ class Multimodal(nn.Module):
         }
 
         return res
+
+
 
 
 if __name__ == '__main__':

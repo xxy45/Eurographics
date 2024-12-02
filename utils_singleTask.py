@@ -4,7 +4,7 @@ import pickle
 import numpy as np
 from torch.utils.data import Dataset
 import torch.nn.functional as F
-# import cv2
+import cv2
 from tqdm import tqdm
 
 

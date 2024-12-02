@@ -11,7 +11,8 @@ import torch
 import torch.nn as nn
 import torch.utils.data as data
 from torch import optim
-from model import Multimodal as MODEL
+# from model import Multimodal as MODEL
+from model import Multimodal_ablation2 as MODEL
 print(MODEL.__name__)
 
 warnings.filterwarnings('ignore')
@@ -304,7 +305,9 @@ if __name__ == "__main__":
         clip_p = torch.FloatTensor(clip_p).to(device)
 
     res = []
-    save_path = './result/{}_tmp_{}/{}'
+    # save_path = './result/{}_tmp_{}/{}'
+    # save_path = './result/{}_text-bilstm_{}/{}'
+    save_path = './result/{}_graph-gru_{}/{}'
 
     LOSSFUNC = lossFunc
     print(LOSSFUNC.__name__)
